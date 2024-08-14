@@ -13,12 +13,12 @@ const HackerNewsList = () => {
   );
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-6">
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       {isLoading ? (
         <div>
           {[...Array(10)].map((_, index) => (
-            <Skeleton key={index} className="h-24 mb-4" />
+            <Skeleton key={index} className="h-32 mb-6 rounded-lg" />
           ))}
         </div>
       ) : (
