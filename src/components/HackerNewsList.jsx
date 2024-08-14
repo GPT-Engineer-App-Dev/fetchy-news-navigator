@@ -16,15 +16,17 @@ const HackerNewsList = () => {
     <div className="container mx-auto p-6">
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       {isLoading ? (
-        <div>
-          {[...Array(10)].map((_, index) => (
-            <Skeleton key={index} className="h-32 mb-6 rounded-lg" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {[...Array(8)].map((_, index) => (
+            <Skeleton key={index} className="h-64 rounded-lg" />
           ))}
         </div>
       ) : (
-        filteredStories.map((story) => (
-          <StoryCard key={story.objectID} story={story} />
-        ))
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {filteredStories.map((story) => (
+            <StoryCard key={story.objectID} story={story} />
+          ))}
+        </div>
       )}
     </div>
   );
